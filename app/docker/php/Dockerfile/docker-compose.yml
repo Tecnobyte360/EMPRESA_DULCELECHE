@@ -1,0 +1,21 @@
+  queue:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    container_name: empresadulceleche-queue
+    command: php artisan queue:work --tries=3 --timeout=90
+    volumes:
+      - ./:/var/www/html
+    depends_on: [app, redis]
+    networks: [empresadulceleche_net]
+
+  scheduler:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    container_name: empresadulceleche-scheduler
+    command: sh -c 'while true; do php artisan schedule:run --verbose --no-interaction; sleep 60; done'
+    volumes:
+      - ./:/var/www/html
+    depends_on: [app]
+    networks: [empresadulceleche_net]
