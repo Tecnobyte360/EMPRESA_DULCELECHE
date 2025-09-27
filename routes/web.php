@@ -15,6 +15,7 @@ use App\Livewire\Bodegas\Bodega;
 use App\Livewire\Bodegas\Edit;
 use App\Livewire\Categoria\Categorias;
 use App\Livewire\Categorias\IndexCategorias;
+use App\Livewire\ConfiguracionEmpresas\Empresas;
 use App\Livewire\Finanzas\Finanzas;
 use App\Livewire\Finanzas\GastosEmpresa;
 use App\Livewire\Finanzas\TiposGasto;
@@ -230,7 +231,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/SalidaMercancia', Salidas::class)->name('SalidaMercancia');
     //finanzas
     Route::get('/Finanzas', Finanzas::class)->name('Finanzas');
-  Route::get('/Gastos', GastosEmpresa::class)->name('Gastos');
+    Route::get('/Gastos', GastosEmpresa::class)->name('Gastos');
     Route::get('/tiposGastos', TiposGasto::class)->name('tiposGastos');
-    
+    Route::get('/Empresas',Empresas::class)->name('Empresas');
 });
