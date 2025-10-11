@@ -16,24 +16,19 @@
             <!-- Header: Left side -->
            <div class="flex">
   <button
-    class="relative z-50 p-2.5 rounded-2xl 
-           bg-black/20 hover:bg-black/30 
-           dark:bg-white/20 dark:hover:bg-white/30
-           text-white dark:text-black
-           mix-blend-difference
-           backdrop-blur-lg
-           shadow-[0_0_15px_rgba(255,255,255,0.6)]
-           hover:shadow-[0_0_25px_rgba(255,255,255,0.9)]
-           transition-all duration-300 transform hover:scale-110"
+    class="p-2.5 rounded-xl bg-gray-200 hover:bg-gray-300 
+           text-gray-700 hover:text-gray-900 
+           shadow-md hover:shadow-lg 
+           transition-all duration-300 transform hover:scale-110 lg:hidden"
     @click.stop="sidebarOpen = !sidebarOpen"
     aria-controls="sidebar"
     :aria-expanded="sidebarOpen"
   >
     <span class="sr-only">Abrir menú</span>
-    <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
-      <rect x="4" y="5" width="16" height="2" rx="1"/>
-      <rect x="4" y="11" width="16" height="2" rx="1"/>
-      <rect x="4" y="17" width="16" height="2" rx="1"/>
+    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+      <rect x="4" y="5" width="16" height="2" rx="1" />
+      <rect x="4" y="11" width="16" height="2" rx="1" />
+      <rect x="4" y="17" width="16" height="2" rx="1" />
     </svg>
   </button>
 </div>
